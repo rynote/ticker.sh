@@ -5,6 +5,9 @@ LANG=en_US.UTF-8
 
 SYMBOLS=("$@")
 
+#Convert the passed data to Uppercase :)
+SYMBOLS=`echo $SYMBOLS | tr [a-z] [A-Z]`
+
 if ! $(type jq > /dev/null 2>&1); then
   echo "'jq' is not in the PATH. (See: https://stedolan.github.io/jq/)"
   exit 1
